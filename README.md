@@ -51,3 +51,4 @@ Validation was done using Ruby v2.5.3p105 and RSPEC.
 * [Converting Integers to Arrays](https://www.ruby-forum.com/t/convert-integer-to-array/137353/24)
 * [Stack overflow - How to sum array of numbers in Ruby?](https://stackoverflow.com/questions/1538789/how-to-sum-array-of-numbers-in-ruby)
 * [Stack overflow - How do I iterate through the digits of an integer?](https://stackoverflow.com/questions/13091558/how-do-i-iterate-through-the-digits-of-an-integer)
+* [Credit Card Number Generator & Validator](https://www.freeformatter.com/credit-card-number-generator-validator.html)
