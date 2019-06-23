@@ -19,13 +19,9 @@ module Luhn
 
   def self.subract_from_odd(number_list)
     number_list.map!.with_index do |number, index|
-      # Luhn.greater_than_10(number, index)
-      # puts "current index is #{index} - current number is #{number}"
-      if index % 2 != 0
+      if index.odd?
         number *= 2
         number -= 9 if number >= 10
-        puts "current number is #{number}"
-        puts "--------"
       else
         number
       end
