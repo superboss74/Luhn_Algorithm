@@ -19,7 +19,7 @@ The number `4194560385008504` is an example of a credit card that passes the Luh
 |Digits to Test|4| 1|9|4|5|6|0|3|8|5|0|0|8|5|0|4|
 |-----|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|--:|
 |Double Every Other|8|1|18|4|10|6|0|3|16|5|0|0|16|5|0|4|
-|Subtract |9|8|1|9|4|1|6|0|3|7|5|0|0|7|5|0|4|
+|Subtract |8|1|9|4|1|6|0|3|7|5|0|0|7|5|0|4
 
 **Sum of the Digits:** 60. Is divisible by 10. `Valid!`
 
