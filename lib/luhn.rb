@@ -10,11 +10,8 @@ module Luhn
 
   def self.when_double(number)
     number *= 2
-    if number >= 10
-      number -= 9
-    else
-      number
-    end
+    number -= 9 if number >= 10
+    number
   end
 
   def self.divisable_by_10?(list)
@@ -23,9 +20,7 @@ module Luhn
 
   def self.every_second_digit(number_list)
     number_list.map!.with_index do |number, index|
-      if index.odd?
-        number = Luhn.when_double(number)
-      end
+      number = Luhn.when_double(number) if index.odd?
       number
     end
   end
@@ -37,5 +32,3 @@ module Luhn
     Luhn.divisable_by_10?(digits_list)
   end
 end
-
-puts Luhn.is_valid?(4194560385008504)
