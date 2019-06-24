@@ -9,7 +9,6 @@ module Luhn
   end
 
   def self.greater_than_10(number)
-    # number -= 9 if number >= 10
     if number >= 10
       number -= 9
     else
@@ -34,9 +33,7 @@ module Luhn
   def self.is_valid?(credit_card_number)
     card_digits = Luhn.card_to_digits(credit_card_number)
     digits_list = Luhn.reverse_digits(card_digits)
-    puts "befor subract_from_odd digits_list = #{digits_list.reverse}"
     Luhn.subract_from_odd(digits_list)
-    puts "after subract_from_odd digits_list = #{digits_list.reverse}"
     Luhn.divisable_by_10?(digits_list)
   end
 end
