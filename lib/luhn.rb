@@ -4,31 +4,33 @@ module Luhn
     card_number.to_s.chars.map(&:to_i)
   end
 
-  def self.reverse_digits(list_of_integers)
-    list_of_integers.reverse
+  def self.reverse_digits(number_list)
+    number_list.reverse
   end
 
-  def self.when_double(number)
-    number *= 2
-    number -= 9 if number >= 10
-    number
+  def self.when_greater_10(number_list)
+    number_list = number_list.map do |number|
+      number >= 10 ? number - 9 : number
+    end
   end
 
-  def self.divisable_by_10?(list)
-    true ? (list.sum % 10).zero? : false
+  def self.divisable_by_10?(number_list)
+    (number_list.sum % 10).zero?
   end
 
   def self.every_second_digit(number_list)
-    number_list.map!.with_index do |number, index|
-      number = Luhn.when_double(number) if index.odd?
-      number
+    number_list = number_list.map.with_index do |number, index|
+      next number if index.zero?
+
+      index.odd? ? number * 2 : number
     end
   end
 
   def self.is_valid?(credit_card_number)
     card_digits = Luhn.card_to_digits(credit_card_number)
     digits_list = Luhn.reverse_digits(card_digits)
-    Luhn.every_second_digit(digits_list)
+    digits_list = Luhn.every_second_digit(digits_list)
+    digits_list = Luhn.when_greater_10(digits_list)
     Luhn.divisable_by_10?(digits_list)
   end
 end
