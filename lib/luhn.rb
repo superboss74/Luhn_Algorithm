@@ -28,9 +28,9 @@ module Luhn
 
   def self.is_valid?(credit_card_number)
     card_digits = Luhn.card_to_digits(credit_card_number)
-    digits_list = Luhn.reverse_digits(card_digits)
-    digits_list = Luhn.every_second_digit(digits_list)
-    digits_list = Luhn.when_greater_10(digits_list)
-    Luhn.divisable_by_10?(digits_list)
+    number_list = Luhn.reverse_digits(card_digits)
+    number_list = Luhn.every_second_digit(number_list)
+    number_list = Luhn.when_greater_10(number_list)
+    Luhn.divisable_by_10?(number_list)
   end
 end
